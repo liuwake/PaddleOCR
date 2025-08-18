@@ -41,14 +41,15 @@ Loss:
   ohem_ratio: 3
 
 Optimizer:
-  name: Adam
-  beta1: 0.9
-  beta2: 0.999
+  name: Momentum
+  momentum: 0.9
   lr:
-    learning_rate: 0.001
-  regularizer:
-    name: 'L2'
-    factor: 0
+    name: DecayLearningRate
+    learning_rate: 0.007
+    epochs: 1000
+    factor: 0.9
+    end_lr: 0
+  weight_decay: 0.0001
 
 PostProcess:
   name: DBPostProcess
