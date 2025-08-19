@@ -573,7 +573,7 @@ def train(
                     )
 
             reader_start = time.time()
-        if dist.get_rank() == 0:
+        if dist.get_rank() == 0 and False:
             prefix = "latest"
             if uniform_output_enabled:
                 export(config, model, os.path.join(save_model_dir, prefix, "inference"))
